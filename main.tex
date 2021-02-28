@@ -1,0 +1,49 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{fontspec}
+\setmainfont[
+Path = fonts/,
+ BoldFont={Veleka-Bold.otf}, 
+ ItalicFont={Veleka-Italic.otf},
+ BoldItalicFont={Veleka-BoldItalic.otf}
+ ]{Veleka-Regular.otf}
+
+
+%% bibliography packages
+\usepackage{biblatex} 
+\addbibresource{biblo.bib} 
+\usepackage[T2A]{fontenc}
+
+%%charset packages
+\usepackage[utf8]{inputenc}
+\usepackage[english,bulgarian]{babel}
+\usepackage{textgreek}
+\usepackage{textcomp}
+
+%% graphics packages
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\graphicspath{{imgs/}}
+\usepackage{float}
+
+%%chem packages
+\usepackage[version=4]{mhchem}
+
+%%IAA autobold and degree C commands
+\newcommand{\ia}{\textbf{IAA}}
+\newcommand{\degC}{\textdegree{}C}
+
+\title{Капилярни мостове с цилиндрична симетрия}
+\author{Васил Иванов }
+\date{\today}
+
+
+\begin{document}
+    Тестово писание с тестов цитат
+    \cite{directSynth}
+    \textbf{bold}
+    \textit{italic}
+    \textbf{\textit{bold italic}}
+    \printbibliography
+\end{document}
