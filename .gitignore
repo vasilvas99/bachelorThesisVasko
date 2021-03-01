@@ -1,4 +1,8 @@
 ##copied from https://github.com/github/gitignore/blob/master/TeX.gitignore
+
+##vasko-defined:
+autoref_translations.txt
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof

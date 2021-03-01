@@ -38,14 +38,23 @@
 \newcommand{\ia}{\textbf{IAA}}
 \newcommand{\degC}{\textdegree{}C}
 
+
+%%Autoref language settings begin
+\renewcommand*{\figureautorefname}{Фиг.}
+%%Autoref language settings end
+
+
 \title{Капилярни мостове с цилиндрична симетрия}
 \author{Васил Иванов }
 \date{\today}
 
 
+
+
 \begin{document}
     Тестово писание с тестов цитат
-    \cite{directSynth}\ref{Fig1}
+    \cite{directSynth}
+    \autoref{fig:Fig1}
     \textbf{bold}
     \textit{italic}
     \textbf{\textit{bold italic}}
@@ -53,7 +62,7 @@
         \centering
         \includegraphics[width=0.5\linewidth]{imgs/test.png}
         \caption{Тестова картинка}
-        \label{Fig1}
+        \label{fig:Fig1}
     \end{figure}
     \printbibliography
 \end{document}
