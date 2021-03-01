@@ -45,9 +45,15 @@
 
 \begin{document}
     Тестово писание с тестов цитат
-    \cite{directSynth}
+    \cite{directSynth}\ref{Fig1}
     \textbf{bold}
     \textit{italic}
     \textbf{\textit{bold italic}}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.5\linewidth]{imgs/test.png}
+        \caption{Тестова картинка}
+        \label{Fig1}
+    \end{figure}
     \printbibliography
 \end{document}
