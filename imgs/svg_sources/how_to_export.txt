@@ -1,0 +1,1 @@
+inkscape -D source.svg -o output.png
