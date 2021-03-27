@@ -7,12 +7,12 @@
 Освен това ще бъдат разгледани само дисперсионните взаимодействия (т.нар $r^{-6}$ потенциал).
 
 \begin{figure}[h]
-    \centering 
-    \subfigure[Схема на взаимодействието]{\label{fig:cylinder_front}\includegraphics[width=0.48\linewidth]{cyl_fig_front.png}}
-    \subfigure[Ортогонална проекция]{\label{fig:cylinder_top}\includegraphics[width=0.48\linewidth]{cyl_fig_top.png}}
-    \caption{
-        Геометрична схема на разглежданата система. $r_{ij}$ - растояние между вътрешната \textbf{\textit{i}} и външната \textbf{\textit{j}} ,,частици``. $z_{ij}$ и $\rho_{ij}$ са съотвените проекции. $r_{ij}^2 = \rho_{ij}^2 + z_{ij}^2$. \textbf{\textit{r}} - радиус на цилиндъра.}
-    \label{fig:cylinder_schematic}
+	\centering 
+	\subfigure[Схема на взаимодействието]{\label{fig:cylinder_front}\includegraphics[width=0.48\linewidth]{cyl_fig_front.png}}
+	\subfigure[Ортогонална проекция]{\label{fig:cylinder_top}\includegraphics[width=0.48\linewidth]{cyl_fig_top.png}}
+	\caption{
+		Геометрична схема на разглежданата система. $r_{ij}$ - растояние между вътрешната \textbf{\textit{i}} и външната \textbf{\textit{j}} ,,частици``. $z_{ij}$ и $\rho_{ij}$ са съотвените проекции. $r_{ij}^2 = \rho_{ij}^2 + z_{ij}^2$. \textbf{\textit{r}} - радиус на цилиндъра.}
+	\label{fig:cylinder_schematic}
 \end{figure}
 
 Такова разглеждания са правени много за случая на плоскопарелелните течни филми \cite{rusanov_shchekin}, като най-интересни са ,,тънките`` филми поради значителното влияние на капилярните
@@ -30,7 +30,7 @@
 Дисперсионните взаимодействия имат адитивен характер \cite{israelachvili}, което ни позволява да представим нашата система като
 ,,потопена`` в един резервоар (в случая с безкрайни размери) или:
 \begin{equation}
-    w_{\infty}  = w + \tilde{w}
+	w_{\infty}  = w + \tilde{w}
 \end{equation}
 Където $\tilde{w}$ е плътността на взаимодействието на елемент от разглежданата система \textbf{\textit{i}} ($0 < \rho_{i} < r$) (оградена от плътния контур на \autoref{fig:cylinder_schematic}) с елемент \textbf{\textit{j}} от съседната на цилиндъра част от безкрайна система ($r < \rho_{j} <  \infty$).
 Безкрайния резервоар е по дефиниция хомогенен, т.е. неговата плътност на енергията е постоянна. Това позволява да заместваме съвсем просто енергията на цилиндъра с енергията на допълнителната система в уравненията, без загуба на обобщеност.
@@ -45,47 +45,47 @@
 Тогава в декартови координати можем да запишем евклидовата норма:
 
 \begin{equation}
-    r_{ij}^2 = (x_{i} - x_{j})^2  + (y_{i} - y_{j})^2 + (z_{i}-z_{j})^2
-    \label{eq:cartesian}
+	r_{ij}^2 = (x_{i} - x_{j})^2  + (y_{i} - y_{j})^2 + (z_{i}-z_{j})^2
+	\label{eq:cartesian}
 \end{equation}
 
 Тъй като работим с цилиндрична симетрия, можем да направим преход към цилиндрични координати, като по конвенция:
 \begin{align*}
-    x &= \rho \cos(\phi) \\
-    y &= \rho \sin(\phi) \\
-    z &= z \\
-    dV &= \rho \,d\rho \,d\phi \,dz
+	x  & = \rho \cos(\phi)           \\
+	y  & = \rho \sin(\phi)           \\
+	z  & = z                         \\
+	dV & = \rho \,d\rho \,d\phi \,dz 
 \end{align*}
 
 Заместваме и опростяваме:
 \begin{align*}
-    r_{ij}^2 &= (\rho_{i}\cos(\phi_{i}) - \rho_{j}\cos(\phi_{j}))^2 + (\rho_{i}\sin(\phi_{i}) - \rho_{j}\sin(\phi_{j}))^2 + (z_i - z_j)^2 \\
-    r_{ij}^2 &= (z_i - z_j)^2 + \rho_{i}^2 + \rho_{j}^2 - 2\rho_{i}\rho_{j}\cos{(\phi_i - \phi_j)}
+	r_{ij}^2 & = (\rho_{i}\cos(\phi_{i}) - \rho_{j}\cos(\phi_{j}))^2 + (\rho_{i}\sin(\phi_{i}) - \rho_{j}\sin(\phi_{j}))^2 + (z_i - z_j)^2 \\
+	r_{ij}^2 & = (z_i - z_j)^2 + \rho_{i}^2 + \rho_{j}^2 - 2\rho_{i}\rho_{j}\cos{(\phi_i - \phi_j)}                                        
 \end{align*}
 
 От тригонометричните равенства имаме:
 \begin{align*}
-    1-2 \sin{\left(\frac{x}{2}\right)}^2=\cos (x)
+	1-2 \sin{\left(\frac{x}{2}\right)}^2=\cos (x) 
 \end{align*}
 
 Допълваме до точен квадрат и получаваме:
 \begin{align*}
-    r_{ij}^2 &= (z_i - z_j)^2 + \rho_{i}^2 + \rho_{j}^2 - 2\rho_{i}\rho_{j}\cos{(\phi_i - \phi_j)} \\
-    r_{ij}^2 &= (z_i - z_j)^2  + (\rho_i - \rho_j)^2 + 4 \rho_i \rho_j \sin{\left( \frac{\phi_i-\phi_j}{2} \right)}^2
+	r_{ij}^2 & = (z_i - z_j)^2 + \rho_{i}^2 + \rho_{j}^2 - 2\rho_{i}\rho_{j}\cos{(\phi_i - \phi_j)}                    \\
+	r_{ij}^2 & = (z_i - z_j)^2  + (\rho_i - \rho_j)^2 + 4 \rho_i \rho_j \sin{\left( \frac{\phi_i-\phi_j}{2} \right)}^2 
 \end{align*}
 
 В последното уравнение става ясно едно много важно следствие от симетрията - в цилиндрични координати експлицитни характеристики на двете точки са само техните разстояния от центъра на 
 цилиндъра $\rho_{i}$ и $\rho_j$, а за останалите по две координати са важни само разликите. Т.е. ние директно можем да дефинираме:
 \begin{align*}
-    \hat{z_j} &= z_i - z_j \\
-    \phi &= \phi_i - \phi_j \\
-    \rho_{ij} &= (\rho_i - \rho_j)^2 + 4 \rho_i \rho_j \sin{\left( \frac{\phi_i-\phi_j}{2} \right)}^2
+	\hat{z_j} & = z_i - z_j                                                                            \\
+	\phi      & = \phi_i - \phi_j                                                                      \\
+	\rho_{ij} & = (\rho_i - \rho_j)^2 + 4 \rho_i \rho_j \sin{\left( \frac{\phi_i-\phi_j}{2} \right)}^2 
 \end{align*}
 
 Или финално:
 \begin{equation}
-    \label{eq:cylindricalcoords}
-    r_{ij}^2 =  \hat{z_{j}}^2 + \rho_{ij}^2
+	\label{eq:cylindricalcoords}
+	r_{ij}^2 =  \hat{z_{j}}^2 + \rho_{ij}^2
 \end{equation}
 
 До същия резултат може да се достигне като се запише косинусовата теорема за триъгълника, който се формира при ортогоналната проекция на цилиндъра на \autoref{fig:cylinder_schematic}.
@@ -96,48 +96,48 @@
 определени и ,,възстановени`` след това.
 
 \begin{equation}
-    \label{eq:energy_integral_raw}
-    \tilde{w_i} \displaystyle\propto \displaystyle\int_{r}^{\infty} \rho_{j} \,d\rho_{j} \displaystyle\int_{0}^{2\pi} \,d\phi \displaystyle\int_{-\infty}^{\infty} r_{ij}^{-6} \,d\hat{z_{j}}
+	\label{eq:energy_integral_raw}
+	\tilde{w_i} \displaystyle\propto \displaystyle\int_{r}^{\infty} \rho_{j} \,d\rho_{j} \displaystyle\int_{0}^{2\pi} \,d\phi \displaystyle\int_{-\infty}^{\infty} r_{ij}^{-6} \,d\hat{z_{j}}
 \end{equation}
 
 Интегрирането по $\hat{z_j}$ става лесно, тъй като $\hat{z_{j}}$ има независим от другите две координати принос в $r_{ij}$:
 \begin{equation*}
-    \displaystyle\int_{-\infty}^{\infty} r_{ij}^{-6} \,d\hat{z_{j}} = \frac{3\pi}{8} \rho_{ij}^5
+	\displaystyle\int_{-\infty}^{\infty} r_{ij}^{-6} \,d\hat{z_{j}} = \frac{3\pi}{8} \rho_{ij}^5
 \end{equation*}
 Аналогичното интегриране по $\phi$ става след представяне на $\rho_{ij}$ в стандартната форма $\rho_{ij}^2 = (\rho_i - \rho_j)^2 + 4 \rho_i \rho_j \sin^2(\psi)$, където $2\psi=\phi$ \cite{gradshteyn}:
 \begin{equation*}
-    \displaystyle\int_{0}^{2\pi} \,d\phi/\rho_{ij}^5 = 4\Psi(p)/(\rho_j-\rho_i)^5
+	\displaystyle\int_{0}^{2\pi} \,d\phi/\rho_{ij}^5 = 4\Psi(p)/(\rho_j-\rho_i)^5
 \end{equation*} 
 Където:
 \begin{align*}
-    \Psi(p) &= \left. \left(2(2+p^2)\boldsymbol{E}(p/\sqrt{1+p^2}) - \boldsymbol{K}(p/\sqrt{1+p^2})\right)\middle/3(1+p^2)^{3/2}\right. \\
-    \boldsymbol{E}(k) &= \displaystyle\int_{0}^{\pi/2} \sqrt{1-k^2 \sin^2(\phi)} \,d\phi \\
-    \boldsymbol{K}(k) &= \displaystyle\int_{0}^{\pi/2} \frac{1}{\sqrt{1-k^2 \sin^2(\phi)}} \,d\phi \\
-    p^2 &= (4 \rho_i \rho_j)/(\rho_j - \rho_i)^2
+	\Psi(p)           & = \left. \left(2(2+p^2)\boldsymbol{E}(p/\sqrt{1+p^2}) - \boldsymbol{K}(p/\sqrt{1+p^2})\right)\middle/3(1+p^2)^{3/2}\right. \\
+	\boldsymbol{E}(k) & = \displaystyle\int_{0}^{\pi/2} \sqrt{1-k^2 \sin^2(\phi)} \,d\phi                                                          \\
+	\boldsymbol{K}(k) & = \displaystyle\int_{0}^{\pi/2} \frac{1}{\sqrt{1-k^2 \sin^2(\phi)}} \,d\phi                                                \\
+	p^2               & = (4 \rho_i \rho_j)/(\rho_j - \rho_i)^2                                                                                    
 \end{align*}
 
 Тъй като има известни неконсистентности в литературата по отношение дефиницията на пълните елиптични интеграли (най-вече по отношение на аргумента $k$), то в настоящата работа е използвана дадената по-горе, която съответно отговаря на на тази в \cite{gradshteyn}.
 
 Така стигаме до последното интегриране - това по $\rho_j$. Тук преди това обаче, ще бъдат въведени две нормировки, които ще използваме широко нататък.
 \begin{align*}
-    x &= \rho_i/r && 0 \le x \le 1 \\
-    \xi &= \rho_i/\rho_j
+	x & = \rho_i/r &   & 0 \le x \le 1 \\
+	\xi &= \rho_i/\rho_j
 \end{align*}
 
 И така, самият интеграл:
 \begin{equation*}
-    \rho_{i}^{-3} I(x) = \displaystyle\int_{r}^{\infty} \left. \Psi(p)\rho_j \,d\rho_j \middle/ (\rho_j-\rho_i)^5 \right.
+	\rho_{i}^{-3} I(x) = \displaystyle\int_{r}^{\infty} \left. \Psi(p)\rho_j \,d\rho_j \middle/ (\rho_j-\rho_i)^5 \right.
 \end{equation*}
 
 И като краен резултат за енергията на взаимодействие получаваме:
 \begin{equation}
-    \tilde{w_i} = -C x^{-3} I(x) 
-    \label{eq:energy_short}
+	\tilde{w_i} = -C x^{-3} I(x) 
+	\label{eq:energy_short}
 \end{equation}
 Където $ C = 3 \pi \beta / 2 v_{m}^2 r^3 $.
 \begin{equation}
-    I(x) = \displaystyle\int_{0}^{x} \frac{\Psi(p) \xi^2}{(1-\xi)^5}  \,d\xi
-    \label{eq:energy_integral}
+	I(x) = \displaystyle\int_{0}^{x} \frac{\Psi(p) \xi^2}{(1-\xi)^5}  \,d\xi
+	\label{eq:energy_integral}
 \end{equation}
 
 Комбинацията от \autoref{eq:energy_short} и \autoref{eq:energy_integral} е нашето ,,мастър`` уравнение, което дава пълната информация за разглеждания модел.
