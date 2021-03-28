@@ -64,7 +64,6 @@
 \begin{align*}
 	1-2 \sin{\left(\frac{x}{2}\right)}^2=\cos (x) 
 \end{align*}
-
 Допълваме до точен квадрат и получаваме:
 \begin{align*}
 	r_{ij}^2 & = (z_i - z_j)^2 + \rho_{i}^2 + \rho_{j}^2 - 2\rho_{i}\rho_{j}\cos{(\phi_i - \phi_j)}                    \\
@@ -105,11 +104,16 @@
 	\displaystyle\int_{0}^{2\pi} \,d\phi/\rho_{ij}^5 = 4\Psi(p)/(\rho_j-\rho_i)^5
 \end{equation*} 
 Където:
+
+\begin{equation}
+	\label{eq:psi_func}
+	\Psi(p)           = \left. \left(2(2+p^2)\boldsymbol{E}(p/\sqrt{1+p^2}) - \boldsymbol{K}(p/\sqrt{1+p^2})\right)\middle/3(1+p^2)^{3/2}\right.
+\end{equation}
+
 \begin{align*}
-	\Psi(p)           & = \left. \left(2(2+p^2)\boldsymbol{E}(p/\sqrt{1+p^2}) - \boldsymbol{K}(p/\sqrt{1+p^2})\right)\middle/3(1+p^2)^{3/2}\right. \\
-	\boldsymbol{E}(k) & = \displaystyle\int_{0}^{\pi/2} \sqrt{1-k^2 \sin^2(\phi)} \,d\phi                                                          \\
-	\boldsymbol{K}(k) & = \displaystyle\int_{0}^{\pi/2} \frac{1}{\sqrt{1-k^2 \sin^2(\phi)}} \,d\phi                                                \\
-	p^2               & = (4 \rho_i \rho_j)/(\rho_j - \rho_i)^2                                                                                    
+	\boldsymbol{E}(k) & = \displaystyle\int_{0}^{\pi/2} \sqrt{1-k^2 \sin^2(\phi)} \,d\phi           \\
+	\boldsymbol{K}(k) & = \displaystyle\int_{0}^{\pi/2} \frac{1}{\sqrt{1-k^2 \sin^2(\phi)}} \,d\phi \\
+	p^2               & = (4 \rho_i \rho_j)/(\rho_j - \rho_i)^2                                     
 \end{align*}
 
 Тъй като има известни неконсистентности в литературата по отношение дефиницията на пълните елиптични интеграли (най-вече по отношение на аргумента $k$), то в настоящата работа е използвана дадената по-горе, която съответно отговаря на на тази в \cite{gradshteyn}.
@@ -120,9 +124,10 @@
 	\xi &= \rho_i/\rho_j
 \end{align*}
 И така, самият интеграл:
-\begin{equation*}
+\begin{equation}
 	\rho_{i}^{-3} I(x) = \displaystyle\int_{r}^{\infty} \left. \Psi(p)\rho_j \,d\rho_j \middle/ (\rho_j-\rho_i)^5 \right.
-\end{equation*}
+	\label{eq:integral_energy_non_normalized}
+\end{equation}
 И като краен резултат за енергията на взаимодействие получаваме:
 \begin{equation}
 	\tilde{w_i} = -C x^{-3} I(x) 
@@ -143,14 +148,14 @@
 Един от най-простите подходи за решаването на такива нелинейни задачи е линеаризация на цялата подинтегрална величина. Тъй като $f: \mathbb{R}^2 \rightarrow \mathbb{R}$ линеаризацията на тази функция, би била просто:
 \begin{equation*}
 	f(x,y) \approx f(x_0,y_0) + \begin{bmatrix}
-		\frac{\partial f}{\partial x} \\
-		\frac{\partial f}{\partial y} 
+	\frac{\partial f}{\partial x} \\
+	\frac{\partial f}{\partial y} 
 	\end{bmatrix} 
 	\begin{bmatrix}
-		(x-x_0) & (y-y_0)
+		(x-x_0) & (y-y_0) 
 	\end{bmatrix}
 \end{equation*}
-Или просто $f(x,y) \approx f(x_0, y_0) = (y-y_0) f^{(0,1)}(x_,y_0)+ (x-x_0) f^{(1,0)}(x_,y_0)$.
+Или просто $f(x,y) \approx f(x_0, y_0) = (y-y_0) f^{(0,1)}(x_0,y_0)+ (x-x_0) f^{(1,0)}(x_0,y_0)$.
 Тук се на практика се ,,отказваме`` от цялата нелинейност на задачата. Критичен е изборът на точките, около които се прави развитието.
 Нека $\rho_i = 0$ и $\rho_j \rightarrow \infty$. Тоест така представяме енергията на взаимодействие на центъра с ,,безкрайно`` отдалечена частица.
 Тук бихме очаквали константния член да е нулев от физични съображения. Като се направят съответните пресмятания се получава, че всички дори производните от високи степени са 0 в съответните граници.
@@ -162,10 +167,45 @@
 \end{equation*}
 Заместваме, интегрираме и получаваме:
 \begin{align*}
-	\rho_{i}^{-3} I(x) &\approx \displaystyle\int_{r}^{\infty} \frac{\pi}{2 \rho_{j}^4}  \,d\rho_j \\
-	\rho_{i}^{-3} I(x) &\approx  \left( -\frac{\pi }{6 \rho_j^3}\big|_{r}^{\infty}  \right) \\
-	\rho_{i}^{-3} I(x) &\approx \frac{\pi}{6} \frac{1}{r^3} 
+	\rho_{i}^{-3} I(x) & \approx \displaystyle\int_{r}^{\infty} \frac{\pi}{2 \rho_{j}^4}  \,d\rho_j \\
+	\rho_{i}^{-3} I(x) & \approx  \left( -\frac{\pi }{6 \rho_j^3}\big|_{r}^{\infty}  \right)        \\
+	\rho_{i}^{-3} I(x) & \approx \frac{\pi}{6} \frac{1}{r^3}                                        
 \end{align*}
 Това приближение е една граница, към която ще се връщаме многократно, тъй като, както ще стане ясно по-късно, тя отговаря на класическия модел на плоскопарелелния филм.
 
 \subsection{Развитие на елиптичните интеграли}
+Тъй като грешката от директното развитие е от вида на $O(\rho_j^n \rho_j^m)$ и $r \le \rho_j < \infty$, $0 \le \rho_i < r$, то независимо дали развиваме по двете координати или
+реципрочните им, грешката след определена стойност $0 \le \rho_{crit} < \infty$ ще расте неограничено. По тази причина когато се правят развития, следва да бъдат за функции дефинирани
+в идеалния случай върху крайни интервали и самите те са крайни в този интервал. И двете условия са изпълнени за $\boldsymbol{E}(k)$ и само първото за $\boldsymbol{K}(k)$. 
+
+В нашия случай $k^2 := p^2/(1+p^2)$ (\autoref{eq:psi_func}). Лесно се вижда (като се замести $p$), че $ 0 \le k^2 \le 1$, т.е. същото важи и за $\sqrt{k^2}$. Тогава можем да преминем към развитието
+на елиптичните интеграли. Предварителната оценка на грешката от тези редове не е толкова тривиална, поради правилата за алгебричните операции с грешка от вида $O(x^n)$. Разбира се, формулата на Тейлър е една интерполационна формула и можем да се опитаме директно да изведем 
+аналитична формула за $\sup\epsilon_{abs}$, но това не е целта на настоящата работа ($\epsilon_{abs} := |I_{approx}(x) - I_{exact}(x)|$).
+
+Затова ще приложим и нормировката $x = \rho_i/r$. Така всички променливи ще бъдат дефинирани върху един и същи краен интервал. Така можем директно числено да потърсим максимума на: $\epsilon_{abs}$ и да използваме
+него като оценка за грешката. 
+
+Редовете, които ще използваме за развитие са взети от \cite{gradshteyn} и са развития около $k_0 = 0$ , като са направени някои прости алгебрични преобразувания, с цел да се илюстрира общото между тях по-добре:
+\begin{align*}
+	\boldsymbol{K}(k) & =\frac{\pi}{2}   \sum _{n=0}^{\infty } \left(\frac{(2 n)!}{2^{2 n} (n!)^2}\right)^2 \left(k^2\right)^n               \\
+	\boldsymbol{E}(k) & =\frac{\pi}{2}   \sum _{n=0}^{\infty } \left(\frac{(2 n)!}{2^{2 n} (n!)^2}\right)^2 \frac{\left(k^2\right)^n}{1-2 n} 
+\end{align*}	
+Така за \autoref{eq:psi_func} получаваме следното приближение (развитието на елиптиците е ,,отрязано`` до втория член на сумите)
+\begin{equation}
+	\Psi(p) \approx \frac{\pi}{8} \frac{4+5p^2+2p^4}{(1+p^2)^{5/2}}
+	\label{eq:psi_approximation}
+\end{equation}
+
+Числено решаваме оптимизационната задача за: 
+\begin{equation*}
+	\max |\epsilon_r| = |(\Psi_{approx}-\Psi_{exact})/\Psi_{exact}|
+\end{equation*}
+Максимумът на относителната грешка oчаквано e $\epsilon_r(p = 1) = 3.67\%$. По теоремата за средните стойности можем и да намерим
+средната грешка на развитието в интервала: $\overline{\epsilon_r(p)} = 0.986\%$. По всичко личи, че \autoref{eq:psi_approximation} е едно прекрасно приближение на оригинална функция и запазва достатъчно добре поведението ѝ в целия интервал.
+Като относително проста рационална функция, тя лесно подлежи на интегриране. Kато заместим \autoref{eq:psi_approximation} в \autoref{eq:integral_energy_non_normalized} и приложим съответните нормировки, получаваме че:
+\begin{equation}
+	\label{eq:arctan_approx}
+	\rho_{i}^{-3} I(x) \approx \frac{\pi }{64 r^3 x^3} \left( x \frac{3 (17+x) x^4+\left(40 x^2-3\right) (1+x)}{3 (1-x)^3 (1+x)^4} +\tanh ^{-1}(x) \right)
+\end{equation}
+
+Като се извърши съответният граничен преход $ x \rightarrow 0 $ за горното уравнение се получава съвсем последователно с предния параграф:  $\lim_{x\to 0} \rho_{i}^{-3} I(x) = \pi/(6 r^3)$
