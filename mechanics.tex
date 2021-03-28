@@ -48,7 +48,6 @@
 	r_{ij}^2 = (x_{i} - x_{j})^2  + (y_{i} - y_{j})^2 + (z_{i}-z_{j})^2
 	\label{eq:cartesian}
 \end{equation}
-
 Тъй като работим с цилиндрична симетрия, можем да направим преход към цилиндрични координати, като по конвенция:
 \begin{align*}
 	x  & = \rho \cos(\phi)           \\
@@ -56,13 +55,11 @@
 	z  & = z                         \\
 	dV & = \rho \,d\rho \,d\phi \,dz 
 \end{align*}
-
 Заместваме и опростяваме:
 \begin{align*}
 	r_{ij}^2 & = (\rho_{i}\cos(\phi_{i}) - \rho_{j}\cos(\phi_{j}))^2 + (\rho_{i}\sin(\phi_{i}) - \rho_{j}\sin(\phi_{j}))^2 + (z_i - z_j)^2 \\
 	r_{ij}^2 & = (z_i - z_j)^2 + \rho_{i}^2 + \rho_{j}^2 - 2\rho_{i}\rho_{j}\cos{(\phi_i - \phi_j)}                                        
 \end{align*}
-
 От тригонометричните равенства имаме:
 \begin{align*}
 	1-2 \sin{\left(\frac{x}{2}\right)}^2=\cos (x) 
@@ -81,7 +78,6 @@
 	\phi      & = \phi_i - \phi_j                                                                      \\
 	\rho_{ij} & = (\rho_i - \rho_j)^2 + 4 \rho_i \rho_j \sin{\left( \frac{\phi_i-\phi_j}{2} \right)}^2 
 \end{align*}
-
 Или финално:
 \begin{equation}
 	\label{eq:cylindricalcoords}
@@ -123,12 +119,10 @@
 	x & = \rho_i/r &   & 0 \le x \le 1 \\
 	\xi &= \rho_i/\rho_j
 \end{align*}
-
 И така, самият интеграл:
 \begin{equation*}
 	\rho_{i}^{-3} I(x) = \displaystyle\int_{r}^{\infty} \left. \Psi(p)\rho_j \,d\rho_j \middle/ (\rho_j-\rho_i)^5 \right.
 \end{equation*}
-
 И като краен резултат за енергията на взаимодействие получаваме:
 \begin{equation}
 	\tilde{w_i} = -C x^{-3} I(x) 
@@ -166,12 +160,11 @@
 \begin{equation*}
 	f(\rho_i = 0, \rho_j \rightarrow \infty) \approx \frac{\pi}{2 \rho_{j}^4}
 \end{equation*}
-
 Заместваме, интегрираме и получаваме:
 \begin{align*}
-	I(x) &\approx \displaystyle\int_{r}^{\infty} \frac{\pi}{2 \rho_{j}^4}  \,d\rho_j \\
-	I(x) &\approx  \left( -\frac{\pi }{6 \rho_j^3}  \right)\big|_{r}^{\infty} \\
-	I(x) &\approx \frac{\pi}{6} \frac{1}{r^3}
+	\rho_{i}^{-3} I(x) &\approx \displaystyle\int_{r}^{\infty} \frac{\pi}{2 \rho_{j}^4}  \,d\rho_j \\
+	\rho_{i}^{-3} I(x) &\approx  \left( -\frac{\pi }{6 \rho_j^3}\big|_{r}^{\infty}  \right) \\
+	\rho_{i}^{-3} I(x) &\approx \frac{\pi}{6} \frac{1}{r^3} 
 \end{align*}
 Това приближение е една граница, към която ще се връщаме многократно, тъй като, както ще стане ясно по-късно, тя отговаря на класическия модел на плоскопарелелния филм.
 
